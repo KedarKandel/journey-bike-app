@@ -5,7 +5,7 @@ const app = express()
 
 
 /*>>>>>>>>>>>>>>>>>>/ load data to database/**>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
-// import dataImport from "./dataImport.js"
+//  import dataImport from "./csvToDatabase/dataImport.js"
 // async function loadData(){
 //   try {
 //     await importData();  
