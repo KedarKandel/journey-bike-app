@@ -1,11 +1,12 @@
 import express from "express";
 const router = express.Router();
 import db from "../connectDb.js";
+import getSingleStationData from "../utils/singleStationData.js";
 
 // Get stations with pagination and search
 router.get("/getAll", async (req, res) => {
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 10;
+  const limit = parseInt(req.query.limit) || 30;
   const offset = (page - 1) * limit;
   const search = req.query.search || "";
 
@@ -45,6 +46,18 @@ router.get("/getAll", async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).send("Server error");
+  }
+});
+
+// get single station data
+router.get("/:id", async (req, res) => {
+  try {
+    const stationId = req.params.id;
+    const stationData = await getSingleStationData(stationId);
+    res.status(200).json(stationData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server Error");
   }
 });
 
