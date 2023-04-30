@@ -2,7 +2,7 @@ import express from "express"
 const router = express.Router();
 import db from "../connectDb.js"
 
-// Get bike journeys with pagination
+// Get all bike journeys with pagination
 router.get('/getAll', async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
