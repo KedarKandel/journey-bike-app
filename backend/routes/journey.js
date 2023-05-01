@@ -6,7 +6,7 @@ import db from "../connectDb.js"
 
 router.get('/getAll', async (req, res) => {
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 10;
+  const limit = parseInt(req.query.limit) || 20;
   const offset = (page - 1) * limit;
   const countQuery = await db.query('SELECT COUNT(*) FROM journeys');
   const totalCount = parseInt(countQuery.rows[0].count);
