@@ -7,8 +7,6 @@ type Props = {
 
 const journeysTable = ({ journeysData }: Props) => {
 
-
-
   return (
     <div className="flex flex-col overflow-x-auto">
       <div className="sm:-mx-6 lg:-mx-8">
@@ -46,7 +44,7 @@ const journeysTable = ({ journeysData }: Props) => {
               <tbody>
                 {journeysData.map((journey) => (
                   
-                  <tr className="w-90 border-b dark:border-neutral-500 hover:bg-gray-100">
+                  <tr key={journey.id} className="w-90 border-b dark:border-neutral-500 hover:bg-gray-100">
                     <td className="whitespace-nowrap px-6 py-4 font-medium text-center">
                     {new Date(journey.departure).toLocaleString()}
                     </td>
@@ -73,7 +71,7 @@ const journeysTable = ({ journeysData }: Props) => {
                     </td>
                     <td  className="text-blue-500 cursor-pointer font-medium">
                     <Link to={`/journeys/${journey.id}`}>
-                      more
+                      key info
                       </Link>
                     </td>
                   </tr>

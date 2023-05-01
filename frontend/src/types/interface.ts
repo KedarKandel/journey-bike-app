@@ -9,4 +9,11 @@ export interface Ijourney {
     covered_distance_m: number;
     duration_s: number;
   }
+
+  export interface  ISingleJourney {
+    departure_station_name: string;
+    return_station_name: string;
+    distance_km: number;
+    duration_minutes: number;
+  }
   

@@ -13,11 +13,11 @@ const Navbar = () => {
           </Link>
         </span>
       </div>
-      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto font-semibold">
         <div className="text-sm lg:flex-grow">
           <Link
             to="/"
-            className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-400 mr-4"
+            className="  block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-400 mr-4"
           >
             Journeys
           </Link>

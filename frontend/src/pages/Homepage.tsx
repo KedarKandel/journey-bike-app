@@ -10,8 +10,8 @@ const Homepage = (props: Props) => {
   const [journeysData, setJourneysData] = useState<Ijourney[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
-  const [totalCount, setTotalCount] = useState<number>(0);
-  const [limit, setLimit] = useState<number>(10);
+  // const [totalCount, setTotalCount] = useState<number>();
+  const [limit, setLimit] = useState<number>();
 
   const getJourneys = async () => {
     try {
@@ -21,7 +21,7 @@ const Homepage = (props: Props) => {
       console.log(response.data);
       setJourneysData(response.data.journeys);
       setTotalPages(response.data.totalPages);
-      setTotalCount(response.data.totalCount);
+      // setTotalCount(response.data.totalCount);
     } catch (error) {
       console.log(error);
     }
@@ -29,7 +29,9 @@ const Homepage = (props: Props) => {
 
   useEffect(() => {
     getJourneys();
-  }, [currentPage]);
+  }, [currentPage, limit]);
+
+ 
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -43,11 +45,16 @@ const Homepage = (props: Props) => {
     }
   };
 
+
   return (
     <div className="w-screen flex flex-col px-6">
       <h1 className="text-center text-blue-900 md:text-3xl underline">
         Journey information
       </h1>
+      <form  className="flex  gap-5 self-center m-5">
+        <input onChange={(e)=>setLimit(parseInt(e.target.value))} type="number" min={5} placeholder="set limit per" className="border border-r-gray-950 px-4" />
+        
+      </form>
       <div className="">
         <JourneysTable journeysData={journeysData} />
       </div>
