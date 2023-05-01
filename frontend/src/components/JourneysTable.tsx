@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Ijourney } from "../types/interface";
 
-type Props = {
+type JourneyTableProps = {
   journeysData: Ijourney[];
 };
 
-const journeysTable = ({ journeysData }: Props) => {
+const journeysTable = ({ journeysData }: JourneyTableProps) => {
 
   return (
     <div className="flex flex-col overflow-x-auto">

@@ -47,12 +47,12 @@ const Homepage = (props: Props) => {
 
 
   return (
-    <div className="w-screen flex flex-col px-6">
+    <div className="w-screen flex flex-col px-6 py-5">
       <h1 className="text-center text-blue-900 md:text-3xl underline">
         Journey information
       </h1>
       <form  className="flex  gap-5 self-center m-5">
-        <input onChange={(e)=>setLimit(parseInt(e.target.value))} type="number" min={5} placeholder="set limit per" className="border border-r-gray-950 px-4" />
+        <input onChange={(e)=>setLimit(parseInt(e.target.value))} type="number" min={5} placeholder="set limit per page" className="border border-r-gray-950 px-4" />
         
       </form>
       <div className="">
