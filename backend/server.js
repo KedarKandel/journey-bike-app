@@ -23,7 +23,7 @@ app.use(express.json())
 //     console.error("Error importing data: ", error);
 //   }
 // }
-// call the function only once
+// call the function only once to prevent data duplication.
   //loadData()
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
 
