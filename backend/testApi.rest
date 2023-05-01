@@ -4,7 +4,7 @@
 
 
 // get specific journey
-// GET http://localhost:3001/api/v1/journeys/2
+ //GET http://localhost:3001/api/v1/journeys/2
 
 
 // get all stations
