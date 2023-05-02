@@ -6,22 +6,22 @@ import getSingleStationData from "../utils/singleStationData.js";
 // Get stations with pagination and search
 router.get("/getAll", async (req, res) => {
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 30;
+  const limit = parseInt(req.query.limit) || 10;
   const offset = (page - 1) * limit;
   const search = req.query.search || "";
 
   try {
     const { rows } = await db.query(
       `
-      SELECT DISTINCT ON (departure_station_id)
-        departure_station_id AS station_id,
-        departure_station_name AS station_name
-      FROM
-        journeys
-      WHERE
-        departure_station_name ILIKE $1
-      ORDER BY departure_station_id
-      LIMIT $2 OFFSET $3;
+       SELECT DISTINCT ON (departure_station_id)
+         departure_station_id,
+         departure_station_name AS station_name
+       FROM
+           journeys
+       WHERE 
+         LOWER(departure_station_name) LIKE '%' || LOWER($1) || '%'
+         ORDER BY departure_station_id
+        LIMIT $2 OFFSET $3;
       `,
       [`%${search}%`, limit, offset]
     );
@@ -38,7 +38,10 @@ router.get("/getAll", async (req, res) => {
     const totalPages = Math.ceil(totalCount / limit);
 
     res.json({
-      stations: rows,
+      stations: rows.map((row) => ({
+        station_id: row.departure_station_id,
+        station_name: row.station_name,
+      })),
       page,
       totalPages,
       totalCount,

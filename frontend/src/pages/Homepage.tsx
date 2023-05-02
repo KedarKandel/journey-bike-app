@@ -18,7 +18,7 @@ const Homepage = (props: Props) => {
       const response = await axios.get(
         `http://localhost:3001/api/v1/journeys/getAll?page=${currentPage}&&limit=${limit}`
       );
-      console.log(response.data);
+      //console.log(response.data);
       setJourneysData(response.data.journeys);
       setTotalPages(response.data.totalPages);
       // setTotalCount(response.data.totalCount);
@@ -56,7 +56,7 @@ const Homepage = (props: Props) => {
         
       </form>
       <div className="">
-        <JourneysTable journeysData={journeysData} />
+       {journeysData.length>0 ? <JourneysTable journeysData={journeysData} /> :<div className=" w-screen text-center text-blue-950  py-10">No journeys to display</div>}
       </div>
 
       <div className="flex  gap-5 self-center">

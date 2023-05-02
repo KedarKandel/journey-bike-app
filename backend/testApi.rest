@@ -7,8 +7,8 @@
  //GET http://localhost:3001/api/v1/journeys/2
 
 
-// get all stations
-//GET http://localhost:3001/api/v1/stations/getAll?search=Baana
+ //get all stations
+//GET http://localhost:3001/api/v1/stations/getAll?limit={20}
 
 // get a single  station
  // GET http://localhost:3001/api/v1/stations/98

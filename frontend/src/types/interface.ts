@@ -16,4 +16,25 @@ export interface Ijourney {
     distance_km: number;
     duration_minutes: number;
   }
+
+  export interface IStation {
+    station_id: number;
+    station_name: string;
+  }
+  
+  export interface IPopularStation {
+    name: string;
+    count: number;
+  }
+  
+  export interface ISingleStation {
+    id: number | null;
+    name: string;
+    totalDepartures: number;
+    totalReturns: number;
+    avgDepartureDistance: number;
+    avgReturnDistance: number;
+    popularReturnStations: IPopularStation[];
+    popularDepartureStations: IPopularStation[];
+  }
   

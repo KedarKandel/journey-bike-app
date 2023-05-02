@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { ISingleJourney } from "../types/interface";
 import JourneyItem from "../components/JourneyItem";
 
-const SingleJourney = () => {
+const SingleJourneyPage = () => {
   const { id } = useParams<{ id: string }>();
   const [journey, setJourney] = useState<ISingleJourney>({
     departure_station_name: "",
@@ -31,9 +31,9 @@ const SingleJourney = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-200">
-      <JourneyItem journey = {journey}/>
+      {journey && <JourneyItem journey = {journey}/>}
     </div>
   );
 };
 
-export default SingleJourney;
+export default SingleJourneyPage;
