@@ -63,7 +63,7 @@ const StationsPage = (props: Props) => {
           onChange={(e) => setUserInput(e.target.value)}
           value={userInput}
           type="text"
-          placeholder="set by station name"
+          placeholder="search by station name"
           className="border border-r-gray-950 px-4"
         />
         <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
