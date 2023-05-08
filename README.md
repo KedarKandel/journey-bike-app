@@ -37,9 +37,9 @@ The backend server will run on http://localhost:3001, while the frontend develop
 4. View specific station with detailed information.
 
 GET /journeys/all: Returns all journeys with pagination.
-GET /journeys/:id: Returns details of a specific journey by ID.
-GET /journeys/all: Returns all journeys with pagination.
-GET /journeys/:id: Returns details of a specific journey by ID.
+GET /journeys/:id: Returns details of a specific journey.
+GET /stations/all: Returns all journeys with pagination.
+GET /stations/:id: Returns details of a specific journey.
 
 The API is implemented using Node.js, Express, and PostgreSQL, and is tested using Jest.
 
