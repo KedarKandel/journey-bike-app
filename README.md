@@ -10,6 +10,15 @@ To get started with this application, follow these steps:
 
  Clone the repository into your local machine: In your terminal write or paste this command "git clone  https://github.com/KedarKandel/journey-bike-app.git" and cd to journey-bike-app. You will have frontend and backend directories inside the journey-bike-app directory.
 
+ In order to run this project on your local machine it should have node installed. 
+ 
+ 1. To check node, in your terminal type: node --version.
+ 2. To check posrgres, in your terminal type: postgres --version
+
+
+ Head over to this webside to install node: https://nodejs.org/en/download
+                        -install postgreSQL: https://www.postgresql.org/download/
+
 
 # Backend:
 1. cd backend
