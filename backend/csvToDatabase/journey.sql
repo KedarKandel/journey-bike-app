@@ -5,9 +5,9 @@ CREATE TABLE journeys (
   departure TIMESTAMP,
   return_info TIMESTAMP,
   departure_station_id INT,
-  departure_station_name VARCHAR(1255),
+  departure_station_name VARCHAR(255),
   return_station_id INT,
-  return_station_name VARCHAR(1255),
+  return_station_name VARCHAR(255),
   covered_distance_m INT ,
   duration_s INT 
 );

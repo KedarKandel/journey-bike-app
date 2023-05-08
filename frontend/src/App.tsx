@@ -1,9 +1,9 @@
 
-// libraries import
+// Libraries and hooks
 import { Routes, Route } from "react-router-dom";
 
 
-// pages import
+// pages 
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/navbar";
 import StationsPage from "./pages/StationsPage";

@@ -1,8 +1,13 @@
+// Libraries and hooks
 import axios from "axios";
-
 import { useEffect, useState } from "react";
-import { Ijourney } from "../types/interface";
+
+// Components
 import JourneysTable from "../components/JourneysTable";
+
+//Interfaces
+import { Ijourney } from "../types/interface";
+
 
 type Props = {};
 
@@ -10,8 +15,8 @@ const Homepage = (props: Props) => {
   const [journeysData, setJourneysData] = useState<Ijourney[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
-  // const [totalCount, setTotalCount] = useState<number>();
-  const [limit, setLimit] = useState<number>();
+  const [totalCount, setTotalCount] = useState<number>(0);
+  const [limit, setLimit] = useState<number>(10);
 
   const getJourneys = async () => {
     try {
@@ -21,7 +26,7 @@ const Homepage = (props: Props) => {
       //console.log(response.data);
       setJourneysData(response.data.journeys);
       setTotalPages(response.data.totalPages);
-      // setTotalCount(response.data.totalCount);
+      setTotalCount(response.data.totalCount);
     } catch (error) {
       console.log(error);
     }
@@ -29,10 +34,18 @@ const Homepage = (props: Props) => {
 
   useEffect(() => {
     getJourneys();
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, limit]);
 
- 
+// Limit not more than 1000.
+  const handleLimitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newLimit = parseInt(e.target.value);
+    if (newLimit > 1000) {
+      setLimit(1000);
+    } else {
+      setLimit(newLimit);
+    }
+  }
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -46,18 +59,31 @@ const Homepage = (props: Props) => {
     }
   };
 
-
   return (
     <div className="w-screen flex flex-col px-6 py-5">
       <h1 className="text-center text-blue-900 md:text-3xl underline">
         Journey information
       </h1>
-      <form  className="flex  gap-5 self-center m-5">
-        <input onChange={(e)=>setLimit(parseInt(e.target.value))} type="number" min={5} placeholder="set limit per page" className="border border-r-gray-950 px-4" />
-        
-      </form>
+      <h3 className="text-center text-blue-900 md:text-md mt-2">
+        Total Journeys: {totalCount.toLocaleString()}
+      </h3>
+      <div className="flex  gap-5 self-center m-5">
+        <input
+          onChange={handleLimitChange}
+          type="number"
+          min={5}
+          placeholder="set limit per page"
+          className="border border-r-gray-950 px-4"
+        />
+      </div>
       <div className="">
-       {journeysData.length>0 ? <JourneysTable journeysData={journeysData} /> :<div className=" w-screen text-center text-blue-950  py-10">No journeys to display</div>}
+        {journeysData.length > 0 ? (
+          <JourneysTable journeysData={journeysData} />
+        ) : (
+          <div className=" w-screen text-center text-blue-950  py-10">
+            No journeys to display
+          </div>
+        )}
       </div>
 
       <div className="flex  gap-5 self-center">

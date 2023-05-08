@@ -1,7 +1,16 @@
+
+// Libraries and hooks
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { IStation } from "../types/interface";
+
+// components
 import StationsTable from "../components/StationsTable";
+
+// interfaces
+import { IStation } from "../types/interface";
+
+
+
 
 type Props = {};
 

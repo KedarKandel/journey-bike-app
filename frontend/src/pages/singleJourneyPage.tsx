@@ -1,8 +1,16 @@
+
+// Libraries and hooks
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ISingleJourney } from "../types/interface";
+
+// components
 import JourneyItem from "../components/JourneyItem";
+
+//interface
+import { ISingleJourney } from "../types/interface";
+
+
 
 const SingleJourneyPage = () => {
   const { id } = useParams<{ id: string }>();
