@@ -33,6 +33,7 @@ const SingleStationPage = () => {
 
   useEffect(() => {
     getStation();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (

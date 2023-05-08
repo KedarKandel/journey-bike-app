@@ -26,6 +26,7 @@ const StationsPage = (props: Props) => {
       setTotalPages(response.data.totalPages);
       setTotalCount(response.data.totalCount);
       setLoading(false);
+      setLimit(10)
     } catch (error) {
       console.log(error);
       setLoading(false);
@@ -34,6 +35,7 @@ const StationsPage = (props: Props) => {
 
   useEffect(() => {
     getStations();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, search, limit]);
 
   const nextPage = () => {

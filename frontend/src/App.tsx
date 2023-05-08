@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/navbar";
-import SingleJourney from "./pages/singleJourneyPage";
 import StationsPage from "./pages/StationsPage";
 
 import SingleStationPage from "./pages/SingleStationPage";

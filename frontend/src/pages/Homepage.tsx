@@ -29,6 +29,7 @@ const Homepage = (props: Props) => {
 
   useEffect(() => {
     getJourneys();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, limit]);
 
  

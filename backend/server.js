@@ -15,16 +15,16 @@ app.use(express.json())
 
 
 /*>>>>>>>>>>>>>>>>>>/ load data to database/**>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
-//  import dataImport from "./csvToDatabase/dataImport.js"
+//  import dataImportFn from "./csvToDatabase/dataImport.js"
 // async function loadData(){
 //   try {
-//     await importData();  
+//     await dataImportFn();  
 //   } catch (error) {
 //     console.error("Error importing data: ", error);
 //   }
 // }
-// call the function only once to prevent data duplication.
-  //loadData()
+//  --call the function only once to prevent data duplication.
+//   loadData()
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
 
 app.use("/api/v1/journeys", journeysRoute)
