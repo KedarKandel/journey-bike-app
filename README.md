@@ -8,7 +8,7 @@
 
 To get started with this application, follow these steps:
 
- Clone the repository into your local machine: In your terminal write or paste this command "git clone  https://github.com/KedarKandel/journey-bike-app.git" and cd to journey-bike-app
+ Clone the repository into your local machine: In your terminal write or paste this command "git clone  https://github.com/KedarKandel/journey-bike-app.git" and cd to journey-bike-app. You will have frontend and backend directories inside the journey-bike-app directory.
 
 
 # Backend:
