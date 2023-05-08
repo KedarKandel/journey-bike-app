@@ -3,11 +3,11 @@ import app from "../server.js";
 
 describe("Journey API", () => {
 
-  describe("GET /journeys/getAll", () => {
+  describe("GET /journeys/all", () => {
 
     it("should return all journeys with pagination", async () => {
       const response = await request(app).get(
-        "/api/v1/journeys/getAll?page=1&limit=10"
+        "/api/v1/journeys/all?page=1&limit=10"
       );
       expect(response.status).toBe(200);
       expect(response.body.journeys.length).toBeGreaterThan(0);
