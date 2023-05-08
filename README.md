@@ -8,21 +8,23 @@ Getting Started:
 
 To get started with this application, follow these steps:
 
-# Clone the repository into your local machine: In your terminal write or paste this command "git clone  https://github.com/KedarKandel/journey-bike-app.git" and cd to journey-bike-app
+ Clone the repository into your local machine: In your terminal write or paste this command "git clone  https://github.com/KedarKandel/journey-bike-app.git" and cd to journey-bike-app
 
 
-Backend:
-# cd backend
-# Install all the required dependencies for the backend: npm install
-# Create a PostgreSQL database and configure the database connection in the .env file.(refer to my application letter)
-# Start the backend server: npm run dev
-# node express app will be running at port 3001.
+# Backend:
+1. cd backend
+2. Install all the required dependencies for the backend: npm install
+3.  Create a PostgreSQL database and configure the database connection in the .env file.(refer to my application letter)
+4. Start the backend server: npm run dev
 
-Frontend:
-# cd frontend
-# Install all the required dependencies for the frontend: npm install
-# Start the frontend development server: npm start
-# React application will be running at port 3000.
+ node express app will be running at port 3001.
+
+# Frontend:
+1. cd frontend
+2. Install all the required dependencies for the frontend: npm install
+3. Start the frontend development server: npm start
+4.  React application will be running at port 3000.
+
 The frontend of the application fetches the api data using axios library
 
 
