@@ -2,7 +2,9 @@ import request from "supertest";
 import app from "../server.js";
 
 describe("Journey API", () => {
+
   describe("GET /journeys/getAll", () => {
+
     it("should return all journeys with pagination", async () => {
       const response = await request(app).get(
         "/api/v1/journeys/getAll?page=1&limit=10"
@@ -21,6 +23,7 @@ describe("Journey API", () => {
   });
 
   describe("GET /journeys/:id", () => {
+
     it("should return the journey with the specified ID", async () => {
       const response = await request(app).get("/api/v1/journeys/1");
       expect(response.status).toBe(200);
@@ -35,5 +38,6 @@ describe("Journey API", () => {
       expect(response.status).toBe(404);
       expect(response.body).toHaveProperty("message", "Journey not found");
     });
+    
   });
 });

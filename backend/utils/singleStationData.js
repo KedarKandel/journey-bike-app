@@ -1,6 +1,8 @@
 import db from "../connectDb.js";
 
 const getSingleStationData = async (stationId) => {
+
+  // count all the departures from the specific station
   const departureCount = await db.query(
     `
       SELECT COUNT(*) AS count
@@ -10,6 +12,7 @@ const getSingleStationData = async (stationId) => {
     [stationId]
   );
 
+  // count all the returns to the specific station
   const returnCount = await db.query(
     `
       SELECT COUNT(*) AS count
@@ -19,6 +22,7 @@ const getSingleStationData = async (stationId) => {
     [stationId]
   );
 
+ // average distance of all the departures to the station
   const avgDepartureDistance = await db.query(
     `
     SELECT ROUND(AVG(covered_distance_m / 1000.0), 2) AS avg_distance_km
@@ -28,6 +32,7 @@ const getSingleStationData = async (stationId) => {
     [stationId]
   );
 
+   // average distance of all the returns to the station
   const avgReturnDistance = await db.query(
     `
     SELECT ROUND(AVG(covered_distance_m / 1000.0), 2) AS avg_distance_km
@@ -37,6 +42,8 @@ const getSingleStationData = async (stationId) => {
     [stationId]
   );
 
+
+  // find the popular stations from where a station gets more frequent returns
   const popularReturnStations = await db.query(
      `
        SELECT j.return_station_name, COUNT(*) AS count
@@ -50,7 +57,7 @@ const getSingleStationData = async (stationId) => {
   );
 
   
-
+// find the popular stations from where a station gets more frequent departures
   const popularDepartureStations = await db.query(
     `
       SELECT j.departure_station_name, COUNT(*) AS count
@@ -62,12 +69,13 @@ const getSingleStationData = async (stationId) => {
       `,
     [stationId]
   );
-
+// get the station name form the departure id.
   const stationName = await db.query(
     `SELECT departure_station_name FROM journeys WHERE departure_station_id = $1 LIMIT 1`,
     [stationId]
   );
 
+  // create a station data object to send from the server.
   const stationData = {
     id: stationId,
     name: stationName.rows[0].departure_station_name,
