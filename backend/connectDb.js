@@ -10,7 +10,7 @@ const client = new Client({
   host: process.env.HOST,
   database: process.env.DATABASE,
   password: process.env.PASSWORD,
-  port: process.env.PORT,
+  port: process.env.DB_PORT,
 });
 
 // Connect to the database and create a table if it does not exist

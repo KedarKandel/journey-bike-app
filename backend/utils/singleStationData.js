@@ -49,6 +49,8 @@ const getSingleStationData = async (stationId) => {
     [stationId]
   );
 
+  
+
   const popularDepartureStations = await db.query(
     `
       SELECT j.departure_station_name, COUNT(*) AS count

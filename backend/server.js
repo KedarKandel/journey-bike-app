@@ -6,7 +6,7 @@ import stationsRoute from "./routes/stations.js"
 
 // initialize express port with env variable.
 dotenv.config()
-const PORT = process.env.EXPRESS_PORT
+const PORT = process.env.EXPRESS_PORT || 5000;
 
 // Initialize express app
 const app = express()
@@ -33,3 +33,5 @@ app.use("/api/v1/stations", stationsRoute)
 app.listen(PORT, ()=>{
     console.log(`App is listening at port ${PORT}`)
 })
+
+export default app;
