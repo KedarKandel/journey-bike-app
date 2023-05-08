@@ -1,10 +1,16 @@
+
+// libraries import
 import { Routes, Route } from "react-router-dom";
+
+
+// pages import
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/navbar";
 import StationsPage from "./pages/StationsPage";
-
 import SingleStationPage from "./pages/SingleStationPage";
 import SingleJourneyPage from "./pages/singleJourneyPage";
+
+
 function App() {
   return (
     <>
