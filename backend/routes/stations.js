@@ -4,7 +4,7 @@ import db from "../connectDb.js";
 import getSingleStationData from "../utils/singleStationData.js";
 
 // Get stations with pagination and search
-router.get("/getAll", async (req, res) => {
+router.get("/all", async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
   const offset = (page - 1) * limit;

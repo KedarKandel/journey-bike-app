@@ -16,7 +16,7 @@ const Homepage = (props: Props) => {
   const getJourneys = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/v1/journeys/getAll?page=${currentPage}&&limit=${limit}`
+        `http://localhost:3001/api/v1/journeys/all?page=${currentPage}&&limit=${limit}`
       );
       //console.log(response.data);
       setJourneysData(response.data.journeys);
