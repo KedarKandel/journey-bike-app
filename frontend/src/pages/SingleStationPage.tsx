@@ -1,5 +1,5 @@
 
-// Libraries
+// Libraries and hooks
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -10,9 +10,6 @@ import StationItem from "../components/StationItem";
 
 // interfaces
 import {  ISingleStation } from "../types/interface";
-
-
-
 
 
 const SingleStationPage = () => {

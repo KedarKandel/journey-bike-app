@@ -2,13 +2,14 @@
 // Libraries and hooks
 import { Routes, Route } from "react-router-dom";
 
-
 // pages 
 import Homepage from "./pages/Homepage";
-import Navbar from "./components/navbar";
 import StationsPage from "./pages/StationsPage";
 import SingleStationPage from "./pages/SingleStationPage";
 import SingleJourneyPage from "./pages/singleJourneyPage";
+
+// components
+import Navbar from "./components/navbar";
 
 
 function App() {

@@ -42,7 +42,7 @@ const journeysTable = ({ journeysData }: JourneyTableProps) => {
                 </tr>
               </thead>
               <tbody>
-                {journeysData.map((journey) => (
+                {journeysData?.map((journey) => (
                   
                   <tr key={journey.id} className="w-90 border-b dark:border-neutral-500 hover:bg-gray-100">
                     <td className="whitespace-nowrap px-6 py-4 font-medium text-center">

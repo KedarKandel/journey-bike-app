@@ -1,6 +1,6 @@
 
 //get all journeys
-//GET http://localhost:3001/api/v1/journeys/all
+// GET http://localhost:3001/api/v1/journeys/all
 
 
 // get specific journey

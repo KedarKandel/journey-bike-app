@@ -9,9 +9,7 @@ import JourneysTable from "../components/JourneysTable";
 import { Ijourney } from "../types/interface";
 
 
-type Props = {};
-
-const Homepage = (props: Props) => {
+const Homepage = () => {
   const [journeysData, setJourneysData] = useState<Ijourney[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);

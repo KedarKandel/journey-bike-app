@@ -10,11 +10,7 @@ import StationsTable from "../components/StationsTable";
 import { IStation } from "../types/interface";
 
 
-
-
-type Props = {};
-
-const StationsPage = (props: Props) => {
+const StationsPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [stationsData, setStationsData] = useState<IStation[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);

@@ -11,7 +11,6 @@ import JourneyItem from "../components/JourneyItem";
 import { ISingleJourney } from "../types/interface";
 
 
-
 const SingleJourneyPage = () => {
   const { id } = useParams<{ id: string }>();
   const [journey, setJourney] = useState<ISingleJourney>({

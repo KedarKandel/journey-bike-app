@@ -1,8 +1,9 @@
+
+// libraries
 import  express  from "express";
 import dotenv from "dotenv"
 import cors from "cors"
-import journeysRoute from "./routes/journey.js"
-import stationsRoute from "./routes/stations.js"
+
 
 // initialize express port with env variable.
 dotenv.config()
@@ -13,9 +14,10 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+/* >>>>>>>>>>>>>>>>>>/ load data to database/**>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
 
-/*>>>>>>>>>>>>>>>>>>/ load data to database/**>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
 //  import dataImportFn from "./csvToDatabase/dataImport.js"
+
 // async function loadData(){
 //   try {
 //     await dataImportFn();  
@@ -23,10 +25,16 @@ app.use(express.json())
 //     console.error("Error importing data: ", error);
 //   }
 // }
-//  --call the function only once to prevent data duplication.
-//   loadData()
+//   => call the function only once to prevent data duplication.
+//   loadData() 
+
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
 
+// routes
+import journeysRoute from "./routes/journey.js"
+import stationsRoute from "./routes/stations.js"
+
+// use routes in app
 app.use("/api/v1/journeys", journeysRoute)
 app.use("/api/v1/stations", stationsRoute)
 
