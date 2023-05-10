@@ -16,18 +16,18 @@ app.use(express.json())
 
 /* >>>>>>>>>>>>>>>>>>/ load data to database(Don't need it after data is inserted successfully))/**>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
 
- import dataImportFn from "./csvToDatabase/dataImport.js"
+//  import dataImportFn from "./csvToDatabase/dataImport.js"
 
-async function loadData(){
-  try {
-    await dataImportFn();  
-  } catch (error) {
-    console.error("Error importing data: ", error);
-  }
-}
+// async function loadData(){
+//   try {
+//     await dataImportFn();  
+//   } catch (error) {
+//     console.error("Error importing data: ", error);
+//   }
+// }
 
  // call the function only once to prevent data duplication.
-  loadData() 
+  //loadData() 
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
 
