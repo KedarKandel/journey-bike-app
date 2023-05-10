@@ -18,6 +18,7 @@ async function importData() {
       csvFiles.map((file) => csv().fromFile(path.join(dataDir, file)))
     );
     
+    // Flatten the jsonArray [ [{},{},{}], [{},{},{}], [{},{},{}]=====> [{},{},{}]
     const allJourneys = jsonArray.flat();
 
     const chunkSize = 1000; // Set the number of records to insert at a time

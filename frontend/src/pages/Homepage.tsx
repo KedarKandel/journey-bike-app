@@ -14,7 +14,7 @@ const Homepage = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
   const [totalCount, setTotalCount] = useState<number>(0);
-  const [limit, setLimit] = useState<number>(10);
+  const [limit, setLimit] = useState<number>(8);
 
   const getJourneys = async () => {
     try {
@@ -59,21 +59,22 @@ const Homepage = () => {
 
   return (
     <div className="w-screen flex flex-col px-6 py-5">
+      
       <h1 className="text-center text-blue-900 md:text-3xl underline">
         Journey information
       </h1>
       <h3 className="text-center text-blue-900 md:text-md mt-2">
         Total Journeys: {totalCount.toLocaleString()}
       </h3>
-      <div className="flex  gap-5 self-center m-5">
+      <form className="flex  gap-5 m-5 self-end">
         <input
           onChange={handleLimitChange}
           type="number"
-          min={5}
+          min={1}
           placeholder="set limit per page"
           className="border border-r-gray-950 px-4"
         />
-      </div>
+      </form>
       <div className="">
         {journeysData.length > 0 ? (
           <JourneysTable journeysData={journeysData} />
@@ -99,6 +100,7 @@ const Homepage = () => {
           Next
         </button>
       </div>
+     
     </div>
   );
 };
