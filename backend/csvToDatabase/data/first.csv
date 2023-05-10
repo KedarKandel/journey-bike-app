@@ -1,4 +1,6 @@
-/*/ emptied to upload on github/*/
-// make sure that the csv files have these headings.
-=====>>>>>> Heading refactures====<<<<<<<<===
+﻿/*/ emptied to upload on github/*/
+/*/ make sure that the csv files have these headings.
+=====>>>>>> use the below line for each csv files, as mentioned in the readme.md file.
+- (just replacing spaces and getting rid of brackets and .)
+👉
 Departure,Return,Departure_station_id,Departure_station_name,Return_station_id,Return_station_name,Covered_distance_m,Duration_sec

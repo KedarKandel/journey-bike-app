@@ -10,23 +10,41 @@ To get started with this application, follow these steps:
 
  Clone the repository into your local machine: In your terminal write or paste this command "git clone  https://github.com/KedarKandel/journey-bike-app.git" and cd to journey-bike-app. You will have frontend and backend directories inside the journey-bike-app directory.
 
- In order to run this project on your local machine it should have node installed. 
+ In order to run this project on your local machine it should have node and postgres installed. 
  
  1. To check node, in your terminal type: node --version.
  2. To check posrgres, in your terminal type: postgres --version
 
 
- Head over to this webside to install node: https://nodejs.org/en/download
-                        -install postgreSQL: https://www.postgresql.org/download/
-
+ Head over to this webside to install node: https://nodejs.org/en/download 
+                        install postgreSQL: https://www.postgresql.org/download/
 
 # Backend:
+☑️😳
+-  I have deleted the information from all of the csv files inside          
+   backend/csvToDatabase/data directory to push the code to git hub. If any problem exists connecting to the database.? You can delete those first.csv, second.csv and third.csv, and download and paste these three csv files inside the (data) folder.
+
+    - https://dev.hsl.fi/citybikes/od-trips-2021/2021-05.csv
+    - https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv
+    - https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv
+
+
+- replace the csv file heading of all three files with below line.(just the first line of each csv files). I did some refactoring.  
+
+👉 Departure,Return,Departure_station_id,Departure_station_name,Return_station_id,Return_station_name,Covered_distance_m,Duration_sec 🤏🏼
+
+- create a database called helsinkibikes or anything and mention this name in the 
+.env file DATABASE = helsinkibikes and other env variables.
+
+   * postgres cmd: create database helsinkibikes;
+
+
 1. cd backend
 2. Install all the required dependencies for the backend: npm install
 3.  Create a PostgreSQL database and configure the database connection in the .env file.(refer to my application letter)
 4. Start the backend server: npm run dev
 
- node express app will be running at port 3001.
+ * node express app will be running at port 3001.
 
 # Frontend:
 1. cd frontend
@@ -34,7 +52,7 @@ To get started with this application, follow these steps:
 3. Start the frontend development server: npm start
 4.  React application will be running at port 3000.
 
-The frontend of the application fetches the api data using axios library
+* The frontend of the application fetches the api data using axios library
 
 
 The backend server will run on http://localhost:3001, while the frontend development server will run on http://localhost:3000.
@@ -62,4 +80,4 @@ The API is implemented using Node.js, Express, and PostgreSQL, and is tested usi
 To run tests for the backend, cd to backend, use the following command: npm run test. This will run all tests in the tests directory.
 
 License
-This application is created by Kedar Kandel.
+- This application is created by Kedar Kandel.

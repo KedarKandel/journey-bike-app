@@ -1,6 +1,6 @@
-import db from "../connectDb.js";
+import db from "../database/connectDb.js";
 
-const getSingleStationData = async (stationId) => {
+const getStationData = async (stationId) => {
 
   // count all the departures from the specific station
   const departureCount = await db.query(
@@ -96,4 +96,4 @@ const getSingleStationData = async (stationId) => {
   return stationData;
 };
 
-export default getSingleStationData;
+export default getStationData;

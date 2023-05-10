@@ -1,0 +1,14 @@
+
+//get all journeys
+GET http://localhost:3001/api/v1/journeys/all
+
+
+ //get specific journey
+// GET http://localhost:3001/api/v1/journeys/2
+
+
+ //get all stations
+// GET http://localhost:3001/api/v1/stations/all?limit={20}
+
+// get a single  station
+// GET http://localhost:3001/api/v1/stations/98

@@ -1,7 +1,11 @@
+
+//libraries
 import express from "express";
 const router = express.Router();
-import db from "../connectDb.js";
-import getSingleStationData from "../utils/singleStationData.js";
+
+// local imports
+import db from "../database/connectDb.js";
+import getStationData from "../utils/stationData.js";
 
 // Get stations with pagination and search
 router.get("/all", async (req, res) => {
@@ -56,7 +60,7 @@ router.get("/all", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const stationId = req.params.id;
-    const stationData = await getSingleStationData(stationId);
+    const stationData = await getStationData(stationId);
     res.status(200).json(stationData);
   } catch (error) {
     console.error(error);

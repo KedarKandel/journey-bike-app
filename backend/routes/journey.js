@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import db from "../connectDb.js";
+import db from "../database/connectDb.js";
 
 // Get all journeys with pagination
 

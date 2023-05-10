@@ -13,6 +13,7 @@ const client = new Client({
   port: process.env.DB_PORT,
 });
 
+
 // Connect to the database and create a table if it does not exist
 (async () => {
   try {

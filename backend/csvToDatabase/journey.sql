@@ -12,8 +12,5 @@ CREATE TABLE journeys (
   duration_s INT 
 );
 
- // queries
- 1. select * from journeys;
- 2. select count(*) from journeys;
 
 

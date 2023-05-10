@@ -1,27 +1,29 @@
 import fs from "fs"
 import * as path from 'path'
 import csv from "csvtojson"
-import db from "../connectDb.js"
+import db from "../database/connectDb.js"
 
 
 
 async function importData() {
   try {
     // Get an array of all CSV files in the "data" directory
+
     const dataDir = path.join(path.dirname(new URL(import.meta.url).pathname), "data");
     const csvFiles = fs
       .readdirSync(dataDir)
       .filter((file) => file.endsWith(".csv"));
 
     // Read the CSV files and parse them into JSON objects
+
     const jsonArray = await Promise.all(
       csvFiles.map((file) => csv().fromFile(path.join(dataDir, file)))
     );
     
-    // Flatten the jsonArray [ [{},{},{}], [{},{},{}], [{},{},{}]=====> [{},{},{}]
+    // Flatten the jsonArray [ [{},{},{}], [{},{},{}], [{},{},{}]=====> [{},{},{}] 
     const allJourneys = jsonArray.flat();
 
-    const chunkSize = 1000; // Set the number of records to insert at a time
+    const chunkSize = 10000; // Set the number of records to insert at a time
     const chunks = [];
     for (let i = 0; i < allJourneys.length; i += chunkSize) {
       chunks.push(allJourneys.slice(i, i + chunkSize));

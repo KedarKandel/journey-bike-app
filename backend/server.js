@@ -30,6 +30,20 @@ app.use(express.json())
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
 
+ import dataImportFn from "./csvToDatabase/dataImport.js"
+
+async function loadData(){
+  try {
+    await dataImportFn();  
+  } catch (error) {
+    console.error("Error importing data: ", error);
+  }
+}
+  //  call the function only once to prevent data duplication.
+   // loadData()
+
+
+
 // routes
 import journeysRoute from "./routes/journey.js"
 import stationsRoute from "./routes/stations.js"
