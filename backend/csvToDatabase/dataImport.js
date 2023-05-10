@@ -23,7 +23,7 @@ async function importData() {
     // Flatten the jsonArray [ [{},{},{}], [{},{},{}], [{},{},{}]=====> [{},{},{}] 
     const allJourneys = jsonArray.flat();
 
-    const chunkSize = 10000; // Set the number of records to insert at a time
+    const chunkSize = 500; // Set the number of records to insert at a time
     const chunks = [];
     for (let i = 0; i < allJourneys.length; i += chunkSize) {
       chunks.push(allJourneys.slice(i, i + chunkSize));

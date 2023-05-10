@@ -4,6 +4,8 @@
 
  This is a web application that allows users to visualise helsinki city bikes journeys,  stations and their detail information. The frontend is built using React, TypeScript, and Tailwind CSS, while the backend is built using Node.js, Express, and Postgres.
 
+
+
 # Getting Started: 
 
 To get started with this application, follow these steps:
