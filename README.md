@@ -22,7 +22,7 @@ To get started with this application, follow these steps:
 # Backend:
 ☑️😳
 -  I have deleted the information from all of the csv files inside          
-   backend/csvToDatabase/data directory to push the code to git hub. If any problem exists connecting to the database.? You can delete those first.csv, second.csv and third.csv, and download and paste these three csv files inside the (data) folder.
+   backend/csvToDatabase/data directory to push the code to github and make it clear to understand. If any problem exists connecting to the database.? You can delete those first.csv, second.csv and third.csv, and download and paste these three csv files inside the (data) folder.
 
     - https://dev.hsl.fi/citybikes/od-trips-2021/2021-05.csv
     - https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv
@@ -33,18 +33,27 @@ To get started with this application, follow these steps:
 
 👉 Departure,Return,Departure_station_id,Departure_station_name,Return_station_id,Return_station_name,Covered_distance_m,Duration_sec 🤏🏼
 
-- create a database called helsinkibikes or anything and mention this name in the 
-.env file DATABASE = helsinkibikes and other env variables.
-
-   * postgres cmd: create database helsinkibikes;
 
 
 1. cd backend
-2. Install all the required dependencies for the backend: npm install
-3.  Create a PostgreSQL database and configure the database connection in the .env file.(refer to my application letter)
-4. Start the backend server: npm run dev
 
- * node express app will be running at port 3001.
+2. Install all the required dependencies for the backend: npm install
+
+3.  Create a PostgreSQL database and configure the database connection in the .env file.(refer to my application letter)
+
+  - create a database called helsinkibikes or anything and mention this name in the .env file DATABASE = helsinkibikes and other env variables.
+
+    * on terminal login to postgres: psql -U postgres
+    * postgres query: create database helsinkibikes;
+
+4. In server.js file, call the function loadData() only once  to avoid data duplication. 
+
+5. Start the backend server: npm run dev
+6. wait until "Data imported successfully!"
+6. now comment back the // loadData() function. 
+
+ * All set now for backend.
+ * node express app will be listening at port 3001.
 
 # Frontend:
 1. cd frontend
