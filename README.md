@@ -5,7 +5,10 @@
  This is a web application that allows users to visualise helsinki city bikes journeys,  stations and their detail information. The frontend is built using React, TypeScript, and Tailwind CSS, while the backend is built using Node.js, Express, and Postgres.
 
 - link to the deployed application: https://curious-panda-744db7.netlify.app/
+- the deplloyed site is only taking around 1458 journeys, so the popular return and departure stations can be less than 5.
+
 - application is responsive
+
 
 # Getting Started: 
 

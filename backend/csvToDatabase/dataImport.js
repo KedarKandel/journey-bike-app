@@ -67,9 +67,7 @@ async function importData() {
           query += ",";
         }
       }
-
-     
-
+      
       await db.query(query);
     }
     console.log("Data imported successfully!");
