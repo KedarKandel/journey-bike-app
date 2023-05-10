@@ -23,7 +23,7 @@ const SingleJourneyPage = () => {
   const getJourney = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/v1/journeys/${id}`
+        `https://bikes-backend.onrender.com/api/v1/journeys/${id}`
       );
       console.log(response.data);
       setJourney(response.data);

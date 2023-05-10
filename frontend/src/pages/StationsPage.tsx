@@ -24,7 +24,7 @@ const StationsPage = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:3001/api/v1/stations/all?page=${currentPage}&limit=${limit}&search=${search}`
+        `https://bikes-backend.onrender.com/api/v1/stations/all?page=${currentPage}&limit=${limit}&search=${search}`
       );
       console.log(response.data);
       setStationsData(response.data.stations);
