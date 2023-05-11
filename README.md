@@ -45,7 +45,7 @@ To get started with this application, follow these steps:
 
 2. Install all the required dependencies for the backend: npm install
 
-3.  Create a PostgreSQL database and configure the database connection in the .env file.(refer to my application letter)
+3.  Create a PostgreSQL database and configure the database connection in the .env file.
 
   - create a database called helsinkibikes or anything and mention this name in the .env file DATABASE = helsinkibikes and other env variables.
 
