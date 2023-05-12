@@ -5,7 +5,7 @@
  This is a web application that allows users to visualise helsinki city bikes journeys,  stations and their detail information. The frontend is built using React, TypeScript, and Tailwind CSS, while the backend is built using Node.js, Express, and Postgres.
 
 - link to the deployed application: https://curious-panda-744db7.netlify.app/
-- the deployed site is only taking few duplicate journeys data. Database hosted on render.com 
+- the deployed site is only taking few duplicate journeys data. Database hosted on render.com(free tier takes time for the server to spin)
 
 - application is responsive
 
