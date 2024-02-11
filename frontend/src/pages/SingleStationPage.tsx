@@ -29,7 +29,7 @@ const SingleStationPage = () => {
   const getStation = async () => {
     try {
       const response = await axios.get(
-        `https://bikes-backend.onrender.com/api/v1/stations/${id}`
+        `http://localhost:5000/api/v1/stations/${id}`
       );
       console.log(response.data);
       setStation(response.data);

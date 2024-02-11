@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js",
-    "build": "npm i",
+    "dev": "nodemon",
+    "build": "npm install",
+    "start": "node index.js",
     "test": "DB_PORT=5432 EXPRESS_PORT=3002 node --experimental-vm-modules node_modules/jest/bin/jest.js tests/*.test.js"
   },
   "keywords": [],

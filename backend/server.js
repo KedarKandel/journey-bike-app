@@ -32,6 +32,7 @@ async function loadData(){
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
 
+app.use(express.static(path.join(__dirname, "../../frontend/build")));
 
 // routes
 import journeysRoute from "./routes/journey.js"
@@ -40,6 +41,12 @@ import stationsRoute from "./routes/stations.js"
 // use routes in app
 app.use("/api/v1/journeys", journeysRoute)
 app.use("/api/v1/stations", stationsRoute)
+
+
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../../frontend/build/index.html"));
+});
 
 app.listen(PORT, ()=>{
     console.log(`App is listening at port ${PORT}`)
