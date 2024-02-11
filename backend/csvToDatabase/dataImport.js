@@ -72,6 +72,7 @@ async function importData() {
     }
     console.log("Data imported successfully!");
   } catch (err) {
+    // ERROR HERE
     console.error("Error importing data: ", err);
   }
 }
