@@ -29,7 +29,7 @@ async function loadData(){
 }
 
  //call the function only once to prevent data duplication.
- // loadData() 
+  loadData() 
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
  const __dirname = path.dirname(new URL(import.meta.url).pathname);
