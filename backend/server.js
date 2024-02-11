@@ -33,7 +33,7 @@ async function loadData(){
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/*/
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, ".././frontend/build")));
 
 // routes
 import journeysRoute from "./routes/journey.js"
