@@ -4,7 +4,7 @@
 
  This is a web application that allows users to visualise helsinki city bikes journeys,  stations and their detail information. The frontend is built using React, TypeScript, and Tailwind CSS, while the backend is built using Node.js, Express, and Postgres.
 
-- link to the deployed application: https://curious-panda-744db7.netlify.app/
+- link to the deployed application: https://journey-app-wa00.onrender.com/
 
 - the deployed site is only taking few duplicate journeys data. Database hosted on render.com(free tier takes time for the server to spin)
 
@@ -30,19 +30,6 @@ To get started with this application, follow these steps:
 
 # Backend:
 ☑️😳
--  I have deleted the information from all of the csv files inside          
-   backend/csvToDatabase/data directory to push the code to github and make it clear to understand. If any problem exists connecting to the database.? You can delete those first.csv, second.csv and third.csv, and download and paste these three csv files inside the (data) folder.
-
-    - https://dev.hsl.fi/citybikes/od-trips-2021/2021-05.csv
-    - https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv
-    - https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv
-
-
-- replace the csv file heading of all three files with below line.(just the first line of each csv files). I did some refactoring.  
-
-👉 Departure,Return,Departure_station_id,Departure_station_name,Return_station_id,Return_station_name,Covered_distance_m,Duration_sec 🤏🏼
-
-
 
 1. cd backend
 
