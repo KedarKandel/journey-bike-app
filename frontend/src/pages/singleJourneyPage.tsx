@@ -11,6 +11,8 @@ import JourneyItem from "../components/JourneyItem";
 import { ISingleJourney } from "../types/interface";
 
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 const SingleJourneyPage = () => {
   const { id } = useParams<{ id: string }>();
   const [journey, setJourney] = useState<ISingleJourney>({
@@ -23,7 +25,7 @@ const SingleJourneyPage = () => {
   const getJourney = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/journeys/${id}`
+        `${API_BASE_URL}/api/v1/journeys/${id}`
       );
       console.log(response.data);
       setJourney(response.data);

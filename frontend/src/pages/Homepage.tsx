@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 
 // Components
 import JourneysTable from "../components/JourneysTable";
-
 //Interfaces
 import { Ijourney } from "../types/interface";
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 const Homepage = () => {
   const [journeysData, setJourneysData] = useState<Ijourney[]>([]);
@@ -16,16 +16,13 @@ const Homepage = () => {
   const [totalCount, setTotalCount] = useState<number>(0);
   const [limit, setLimit] = useState<number>(8);
 
-  const localUrl = "http://localhost:3000/"
-  const deployedUrl = `https://bikes-backend.onrender.com/api/v1/journeys/all?page=${currentPage}&&limit=${limit}`
+ 
 
   const getJourneys = async () => {
     try {
-      // const response = await axios.get(
-      //   `https://bikes-backend.onrender.com/api/v1/journeys/all?page=${currentPage}&&limit=${limit}`
-      // );
+   
 
-      const response = await axios.get(`http://localhost:5000/api/v1/journeys/all?page=${currentPage}&&limit=${limit}`)
+      const response = await axios.get(`${API_BASE_URL}/api/v1/journeys/all?page=${currentPage}&&limit=${limit}`)
       //console.log(response.data);
       setJourneysData(response.data.journeys);
       setTotalPages(response.data.totalPages);
