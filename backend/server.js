@@ -14,7 +14,7 @@ const PORT = process.env.EXPRESS_PORT || 5000;
 const app = express()
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+     origin: 'https://journey-app-wa00.onrender.com',
     credentials: true,
   })
 );
