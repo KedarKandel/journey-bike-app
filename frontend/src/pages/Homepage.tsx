@@ -16,20 +16,20 @@ const Homepage = () => {
   const [totalCount, setTotalCount] = useState<number>(0);
   const [limit, setLimit] = useState<number>(8);
 
- 
+ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || ""
 
   const getJourneys = async () => {
     try {
    
 
-      // const response = await axios.get(`${API_BASE_URL}/api/v1/journeys/all?page=${currentPage}&&limit=${limit}`)
-      //console.log(response.data);
-      const response = await axios.get('/api/v1/journeys/all', {
-        params: {
-          page: currentPage,
-          limit: limit
-        }
-      });
+      const response = await axios.get(`${API_BASE_URL}/api/v1/journeys/all?page=${currentPage}&&limit=${limit}`)
+      console.log(response.data);
+      // const response = await axios.get(`${API_BASE_URL}/api/v1/journeys/all`, {
+      //   params: {
+      //     page: currentPage,
+      //     limit: limit
+      //   }
+      // });
       setJourneysData(response.data.journeys);
       setTotalPages(response.data.totalPages);
       setTotalCount(response.data.totalCount);
