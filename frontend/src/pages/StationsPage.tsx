@@ -20,13 +20,13 @@ const StationsPage = () => {
   const [userInput, setUserInput] = useState<string>("");
   const [search, setSearch] = useState<string>("");
 
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+ 
 
   const getStations = async () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `${API_BASE_URL}/api/v1/stations/all?page=${currentPage}&limit=${limit}&search=${search}`
+        `/api/v1/stations/all?page=${currentPage}&limit=${limit}&search=${search}`
       );
       console.log(response.data);
       setStationsData(response.data.stations);
