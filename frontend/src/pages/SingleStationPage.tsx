@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import StationItem from "../components/StationItem";
 // interfaces
 import {  ISingleStation } from "../types/interface";
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || ""
+//const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || ""
 
 const SingleStationPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -26,7 +26,7 @@ const SingleStationPage = () => {
   const getStation = async () => {
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/api/v1/stations/${id}`
+        `/api/v1/stations/${id}`
       );
       console.log(response.data);
       setStation(response.data);
